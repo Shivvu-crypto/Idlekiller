@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDLEKILLER</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-page" id="auth-page">
+        <div class="auth-container">
+            <h1>IDLEKILLER</h1>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-btn">Login</button>
+            <p>Not a user? <a href="#" id="signup-link">Signup</a></p>
+        </div>
+    </div>
+    <div class="app-container" id="app-container" style="display: none;">
+        <div class="room-container" id="room-container" style="display: none;">
+            <div class="header">
+                <h2>Your Rooms</h2>
+                <button id="blogs-btn">Blogs</button>
+                <button id="logout-btn">Logout</button>
+            </div>
+            <div class="room-list" id="room-list"></div>
+            <div class="room-create">
+                <input type="text" id="room-name" placeholder="Enter room name">
+                <button id="create-room-btn">Create</button>
+            </div>
+        </div>
+        <div class="chat-container" id="chat-container" style="display: none;">
+            <div class="header">
+                <h2 id="chat-room-name"></h2>
+                <input type="text" id="invite-link" readonly>
+                <button id="copy-invite-btn">Copy</button>
+                <button id="back-to-rooms-btn">Back</button>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Say something...">
+                <input type="file" id="message-file" accept=".txt,.pdf,.png,.jpg,.jpeg,.gif">
+                <button id="send-btn">➤</button>
+            </div>
+        </div>
+        <div class="blog-container" id="blog-container" style="display: none;">
+            <div class="header">
+                <h2>Your Blogs</h2>
+                <button id="back-to-rooms-btn-blog">Back</button>
+            </div>
+            <div class="blog-input">
+                <textarea id="blog-input" placeholder="Write in cursive... Click Bold to toggle"></textarea>
+                <button id="bold-toggle-btn">Bold</button>
+                <input type="file" id="blog-file" accept=".txt,.pdf,.png,.jpg,.jpeg,.gif">
+                <button id="post-blog-btn">Post</button>
+            </div>
+            <div class="blog-posts" id="blog-posts"></div>
+        </div>
+        <div class="blog-view" id="blog-view" style="display: none;">
+            <div class="header">
+                <h2>Blog</h2>
+                <button id="back-to-blogs-btn">Back</button>
+            </div>
+            <div class="blog-content" id="blog-content"></div>
+            <div class="share-link">
+                <input type="text" id="blog-share-link" readonly>
+                <button id="copy-blog-link-btn">Copy</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+    <script>
+        {% if join_room_id %}
+        window.joinRoomId = {{ join_room_id }};
+        {% endif %}
+        {% if view_blog_id %}
+        window.viewBlogId = {{ view_blog_id }};
+        {% endif %}
+    </script>
+</body>
+</html>
