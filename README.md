@@ -24,8 +24,4 @@ idlekiller/
 2. Run app.py
 3. Open index.html in browser
 
-## Team
-- Raj Mathur (0818CS221156)
-- Shivam Tripathi (0818CS221191)
 
-Guided by: Mr. Rakesh Verma, Asst. Professor, CSE Dept.
