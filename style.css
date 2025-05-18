@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #6b48ff);
+    overflow: hidden;
+    color: #fff;
+}
+
+.auth-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.auth-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in;
+}
+
+.auth-container h1 {
+    color: #6b48ff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.auth-container input:focus {
+    border-color: #6b48ff;
+    outline: none;
+}
+
+.auth-container button {
+    padding: 12px 24px;
+    background: #6b48ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.auth-container button:hover {
+    background: #5a3de6;
+    transform: scale(1.05);
+}
+
+.auth-container a {
+    color: #6b48ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.app-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-container, .chat-container, .blog-container, .blog-view {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+}
+
+.room-container::before, .chat-container::before, .blog-container::before, .blog-view::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #6b48ff, #ff6b6b, #6b48ff);
+    z-index: -1;
+    border-radius: 22px;
+}
+
+.header {
+    padding: 20px;
+    background: linear-gradient(90deg, #6b48ff, #8a63ff);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff6b6b;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.room-list, .chat-messages, .blog-posts {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+    background: #fafafa;
+}
+
+.room-item, .blog-post {
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    color: #6b48ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.room-item:hover, .blog-post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.room-create, .chat-input, .blog-input {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+#room-name, #message-input, #blog-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#room-name:focus, #message-input:focus, #blog-input:focus {
+    border-color: #6b48ff;
+    outline: none;
+}
+
+#blog-input {
+    min-height: 120px;
+    resize: vertical;
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
+    color: #ff6b6b;
+}
+
+#message-file, #blog-file {
+    padding: 10px;
+}
+
+#create-room-btn, #logout-btn, #blogs-btn, #back-to-rooms-btn, #back-to-rooms-btn-blog, #post-blog-btn, #send-btn, #back-to-blogs-btn, #bold-toggle-btn {
+    padding: 12px 24px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#bold-toggle-btn {
+    background: #ff6b6b;
+}
+
+#create-room-btn:hover, #logout-btn:hover, #blogs-btn:hover, #back-to-rooms-btn:hover, #back-to-rooms-btn-blog:hover, #post-blog-btn:hover, #send-btn:hover, #back-to-blogs-btn:hover, #bold-toggle-btn:hover {
+    background: #e55a5a;
+    transform: scale(1.05);
+}
+
+#copy-invite-btn, #copy-blog-link-btn {
+    padding: 12px 24px;
+    background: #6b48ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#copy-invite-btn:hover, #copy-blog-link-btn:hover {
+    background: #5a3de6;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    padding: 6px 12px;
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.3s;
+    float: right;
+}
+
+.delete-btn:hover {
+    background: #c62834;
+    transform: scale(1.05);
+}
+
+.chat-messages p {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    max-width: 70%;
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.chat-messages .me {
+    background: #6b48ff;
+    color: white;
+    margin-left: auto;
+}
+
+.chat-messages .friend {
+    background: #f0f4ff;
+    color: #6b48ff;
+}
+
+#invite-link, #blog-share-link {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f0f4ff;
+    color: #6b48ff;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.blog-post p, .blog-content p {
+    line-height: 1.8;
+    margin-bottom: 12px;
+    color: #ff6b6b;
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
+}
+
+.blog-post strong, .blog-content strong {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #6b48ff;
+    font-size: 18px;
+}
+
+.blog-post small, .blog-content small {
+    color: #777;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.blog-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.share-link {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+} 
