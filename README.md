@@ -2,8 +2,8 @@
 This is a web/mobile app that tracks user inactivity and reduces unproductive screen time.
 
 ## Features
-- help to kill your idle time
-- create rooms to chat eith friends and giving them the links.
+- helps to use your idle time efficiently.
+- create rooms to chat with friends and giving them the links. make your group and use it like your own app
 - Easy UI
 
 ## Tech Used
