@@ -3,7 +3,7 @@ This is a web/mobile app that tracks user inactivity and reduces unproductive sc
 
 ## Features
 - help to efficiently use your idle time.
-- create rooms to chat eith friends and giving them the links.
+- create rooms to chat with friends and giving them the links.
 - Easy UI
 
 ## Tech Used
